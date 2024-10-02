@@ -1,0 +1,139 @@
+/* Sidebar.css */
+.mainbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1000;
+}
+
+  
+  .logo {
+    width: 215px; 
+    height: 60px; 
+    float: left;
+    margin-top: 10px;
+  }
+  .nav-item {
+    padding-bottom: 1px; 
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+  }
+  .nav-loggedIn{
+    text-decoration: none;
+    margin-left: 15px ;
+    color: #817474;
+    font-weight: 500;
+  }
+  .nav-link {
+    color: #817474;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover {
+    color: #fff;
+    background-color: rgba(0, 131, 228, 1);
+  }
+  
+  .nav-link.active {
+    color: #fff;
+    background-color: rgba(0, 131, 228, 1);
+  }
+  
+  .nav-arrow {
+    float: right;
+    width: 8px; 
+    height: 10px;
+  }
+  
+  .wholeprofile {
+   margin-top: 340px;
+  }
+  
+  .profile {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    padding-bottom: 20px; 
+    padding-left: 10px; 
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px; 
+    margin-right: 5px; 
+  }
+  
+  .profile-info p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .profile-info p.text-muted {
+    font-size: 9px;
+    font-family: 'Poppins', sans-serif;}
+  
+    /* .grachiever-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem; 
+    font-weight: bold;
+    color: #000000;
+  }
+  .version{
+   font-size:10px;
+   margin-top: 10px;
+  }
+  */
+  
+  .arrow-button {
+    background: none;
+    margin-left: 70px;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 13px;
+    outline: none;
+  }
+  
+  .arrow-button:hover {
+    color: rgb(81, 168, 235);
+  }
+  
+  .popup {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup-button {
+    width: 100%;
+    color: rgba(0, 131, 228, 1);
+    padding: 3px 3px;
+    margin-bottom: 5px;
+    background: #f8f9fa;
+    border: 2px solid rgba(0, 131, 228, 1);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  
+  .popup-button:hover {
+    background: rgba(0, 131, 228, 1);
+    color: #fff;
+    border-color: rgba(0, 131, 228, 1);
+  }
+  .but{
+    margin-left: 10px;
+    margin-right: 15px;
+  }
