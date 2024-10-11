@@ -1,0 +1,106 @@
+.most-selling-products {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between; /* Flexbox to space out header elements */
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .right-header {
+    display: flex; /* Aligns filter icon and date range in a row */
+    align-items: center; /* Vertically centers the items */
+  }
+  
+  .filter-icon {
+    cursor: pointer;
+    margin-right: 10px; /* Space between filter icon and date */
+  }
+  
+  .date-range {
+    font-size: 14px; /* Adjust font size for date range */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td,tr {
+    padding: 10px;
+    text-align: center; /* Center align text in table cells */
+  }
+  th {
+    background-color: #f7f7f7;
+    text-align: center; /* Ensure header text is centered */
+  }
+  
+  .type-button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+  }
+  
+  .type-button.project {
+    background-color: #6c63ff; /* blue */
+  }
+  
+  .type-button.training-program {
+    background-color: #ff6f61; /* pink */
+  }
+ 
+  .filter-popup {
+    position: absolute; /* Dynamically positioned based on JS calculations */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px; /* Adjust width as needed */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .close-filter {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .filter-item {
+    margin-bottom: 10px;
+  }
+  
+  .filter-item label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  .filter-type-buttons {
+    display: flex;
+    gap: 5px; /* Gap between the buttons */
+  }
+  
+  .filter-type-button {
+    background-color: white;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .filter-type-button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
