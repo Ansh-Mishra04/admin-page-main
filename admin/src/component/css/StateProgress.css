@@ -1,0 +1,39 @@
+.state-progress {
+    margin-bottom: 15px;
+  }
+  
+  .state-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  .progress-bar {
+    background-color: #e0e0e0; /* Light gray for the full background */
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px; /* Height of the progress bar */
+    position: relative; /* Make the container relative */
+  }
+  
+  .progress-fill {
+    background-color: #3498db; /* Blue for the progress */
+    height: 100%;
+    border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+    transition: width 0.4s ease; /* Smooth transition for the progress bar */
+    position: absolute; /* Make the progress bar absolute to overlap */
+    top: 0;
+    left: 0;
+  }
+  
+  .dropdown {
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
