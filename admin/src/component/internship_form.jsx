@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Help = () => {
+const InternshipForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -25,26 +25,14 @@ const Help = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Handle form submission here, like sending form data to a backend or logging it
     console.log('Form submitted:', formData);
   };
 
   return (
-    <div 
-      className="container" 
-      style={{ 
-        maxWidth: '600px', 
-        margin: '50px auto', 
-        padding: '20px', 
-        backgroundColor: '#f7f7f7', 
-        borderRadius: '8px', 
-        boxShadow: '0 4px 8px rgba(0,0,0,0.1)' 
-      }}
-    >
-      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
-        Gracheiver's Free Remote Internship Program
-      </h2>
-      
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+    <div className="container" style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+      <h2>Gracheiver's Free remote internship program</h2>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Full Name</label>
           <input
@@ -54,7 +42,6 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your full name"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
         <div className="form-group">
@@ -66,7 +53,6 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your email"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
         <div className="form-group">
@@ -78,7 +64,6 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your contact number"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
         <div className="form-group">
@@ -90,7 +75,6 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your WhatsApp number"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
         <div className="form-group">
@@ -102,7 +86,6 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your degree or course name"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
         <div className="form-group">
@@ -114,7 +97,6 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your city/country"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
         <div className="form-group">
@@ -126,18 +108,11 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your college name, city"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
         <div className="form-group">
           <label>Role in which you have better grip</label>
-          <select 
-            name="role" 
-            value={formData.role} 
-            onChange={handleChange} 
-            required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
-          >
+          <select name="role" value={formData.role} onChange={handleChange} required>
             <option value="">Select role</option>
             <option value="Frontend Developer">Frontend Developer</option>
             <option value="Backend Developer">Backend Developer</option>
@@ -145,13 +120,7 @@ const Help = () => {
         </div>
         <div className="form-group">
           <label>Did any internship before?</label>
-          <select 
-            name="internshipBefore" 
-            value={formData.internshipBefore} 
-            onChange={handleChange} 
-            required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
-          >
+          <select name="internshipBefore" value={formData.internshipBefore} onChange={handleChange} required>
             <option value="No">No</option>
             <option value="Yes">Yes</option>
           </select>
@@ -163,7 +132,6 @@ const Help = () => {
             value={formData.pastExperience}
             onChange={handleChange}
             placeholder="Enter your past experience"
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           ></textarea>
         </div>
         <div className="form-group">
@@ -175,26 +143,12 @@ const Help = () => {
             onChange={handleChange}
             placeholder="Enter your GitHub link"
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
         </div>
-        <button 
-          type="submit" 
-          style={{ 
-            backgroundColor: '#007bff', 
-            color: 'white', 
-            padding: '10px', 
-            border: 'none', 
-            borderRadius: '4px', 
-            cursor: 'pointer',
-            marginTop: '10px'
-          }}
-        >
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
 
-export default Help;
+export default InternshipForm;
