@@ -148,3 +148,59 @@
   position: absolute;
   right: 550px;
 }
+.user-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+}
+
+.user-header {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+.user-header p{
+  color: grey;
+}
+
+.user-header .icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  color: grey;
+}
+
+.footer .percentage-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.footer .percentage {
+  color: #00FF00; /* Green color for positive percentage */
+  font-weight: bold;
+}
+.footer p{
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.icon{
+  width: 30px;
+}

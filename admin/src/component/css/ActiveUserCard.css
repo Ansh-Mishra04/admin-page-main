@@ -1,0 +1,48 @@
+ 
+  .card-header h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .card-body h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .percentage {
+    color: #28a745;
+    font-size: 14px;
+  }
+  
+  .increase {
+    font-weight: bold;
+  }
+  
+  .world-map {
+    height: 200px;
+  }
+  
+  .legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .dot.active {
+    background-color: #007bff;
+  }
+  
+  .dot.inactive {
+    background-color: #e0e0e0;
+  }
+  

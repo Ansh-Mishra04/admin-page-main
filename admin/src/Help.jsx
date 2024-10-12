@@ -31,8 +31,8 @@ const Help = () => {
   return (
     <div 
       className="container" 
-      style={{ 
-        maxWidth: '600px', 
+      style={{
+        maxWidth: '100%', 
         margin: '50px auto', 
         padding: '20px', 
         backgroundColor: '#f7f7f7', 
