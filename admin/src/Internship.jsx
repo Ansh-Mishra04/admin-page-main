@@ -1,12 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './component/css/Internship.css'; // Assuming you'll create a separate CSS file for this component
-
 const Internships = () => {
   const navigate = useNavigate();
 
   const handleAddFormClick = () => {
-    navigate('/form-builder');
+    navigate('/new-form');
   };
   const recentForms = [
     { id: 1, title: 'Backend Hiring', formImage: '/form-image.jpeg' },
@@ -16,6 +15,7 @@ const Internships = () => {
   ];
 
   return (
+
     <div className="internships-page">
       {/* Add new form section */}
       <div className="add-form-section" onClick={handleAddFormClick}>
