@@ -14,18 +14,23 @@ const Help = () => {
     internshipBefore: '',
     pastExperience: '',
     githubLink: '',
+    agreeToTerms: false,  // New state for checkbox
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,  // Handle checkbox separately
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.agreeToTerms) {
+      alert('Please agree to the terms and conditions before submitting.');
+      return;
+    }
     console.log('Form submitted:', formData);
   };
 
@@ -33,6 +38,22 @@ const Help = () => {
     <div className="container">
       <h2 className="title">Gracheiver's Free Remote Internship Program</h2>
       <form onSubmit={handleSubmit} className="form">
+    <div 
+      className="container" 
+      style={{
+        maxWidth: '100%', 
+        margin: '50px auto', 
+        padding: '20px', 
+        backgroundColor: '#f7f7f7', 
+        borderRadius: '8px', 
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)' 
+      }}
+    >
+      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+        Gracheiver's Free Remote Internship Program
+      </h2>
+      
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <div className="form-group">
           <label>Full Name</label>
           <input
@@ -145,19 +166,20 @@ const Help = () => {
             required
           />
         </div>
-        <div className="form-group checkbox-group">
-          <input
-            type="checkbox"
-            name="agreeToTerms"
-            checked={formData.agreeToTerms}
-            onChange={handleChange}
-            required 
-          />
-          <label className="checkbox-label">
-            By submitting this form, I confirm that the information provided is accurate, and I agree to the terms and conditions and to be contacted by Grachiever for further communication.
-          </label>
-        </div>
-        <button type="submit" className="submit-btn">Submit</button>
+        <button 
+          type="submit" 
+          style={{ 
+            backgroundColor: '#007bff', 
+            color: 'white', 
+            padding: '10px', 
+            border: 'none', 
+            borderRadius: '4px', 
+            cursor: 'pointer',
+            marginTop: '10px'
+          }}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

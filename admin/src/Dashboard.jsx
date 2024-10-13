@@ -1,7 +1,7 @@
 import React from 'react'
 import './component/css/Dashboard.css';
-import { Line, Doughnut, Bar } from 'react-chartjs-2';
-import LineChart from './component/LineChart'
+// import { Line, Doughnut, Bar } from 'react-chartjs-2';
+import LineCharts from './component/LineChart'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend } from 'chart.js';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend);
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,8 +10,11 @@ import StateProgress from './component/StateProgress'
 import MostSellingProducts from './component/MostSellingProducts';
 import { ResponsivePie } from '@nivo/pie';
 import { ResponsiveLine } from '@nivo/line';
+import { faUsers,faUserLock, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { ResponsiveChoropleth } from '@nivo/geo';
-// import worldCountries from './world_countries.json'; // For the geo chart
+import { LineChart, Line, ResponsiveContainer } from 'recharts';
+import ActiveUserCard from './component/ActiveUserCard';
+
 
 const Dashboard = () => {
   const data = [
@@ -49,13 +52,6 @@ const Dashboard = () => {
     { "id": "Tablet", "label": "Tablet", "value": 2695, "color": "hsl(120, 70%, 50%)" },
     { "id": "Mobile", "label": "Mobile", "value": 20654, "color": "hsl(40, 70%, 50%)" }
   ];
-
-  const geoChartData = [
-    { "id": "USA", "value": 4568 },
-    { "id": "IND", "value": 3500 },
-    { "id": "GBR", "value": 3000 },
-    // More countries
-  ];
   return (
     <div className="dashboard-container">
       <div className="overview">
@@ -82,7 +78,7 @@ const Dashboard = () => {
           </div>
           <div className="card-line">
             <h4>Total Revenue Growth</h4>
-            <LineChart />
+            <LineCharts />
           </div>
         </div>
         <div className="sales-data">
@@ -228,16 +224,79 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="social-card">
-            
+          <ActiveUserCard activeUsers={4568} increasePercentage={50} />
           </div>
         </div>
         <div className="heading">
         <h2>Users</h2>
         </div>
         <div className="users">
-          <div className="user-card"></div>
-          <div className="user-card"></div>
-          <div className="user-card"></div>
+          <div className="user-card">
+                  <div className="user-header">
+                <i className="icon-users"><FontAwesomeIcon icon={faUsers}/></i> {/* Add icon */}
+                <p>Total Users</p>
+              </div>
+
+              <div className="stats">
+                <h3>469k</h3>
+                <ResponsiveContainer width="50%" height={50}>
+                  <LineChart data={data}>
+                    <Line type="monotone" dataKey="uv" stroke="#00FF00" strokeWidth={2} dot={false} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="footer">
+                <i className="icon-percentage"><FontAwesomeIcon icon={faArrowUpRightDots} style={{color: "#00573d"}}/></i>
+                <p>
+                  <span className="percentage">78%</span> From April
+                </p>
+              </div>
+          </div>
+          <div className="user-card">
+          <div className="user-header">
+                <i className="icon-users"><FontAwesomeIcon icon={faUserLock}/></i>
+                <p>Logged in Users</p>
+              </div>
+
+              <div className="stats">
+                <h3>88k</h3>
+                <ResponsiveContainer width="50%" height={50}>
+                  <LineChart data={data}>
+                    <Line type="monotone" dataKey="uv" stroke="#00FF00" strokeWidth={2} dot={false} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="footer">
+                <i className="icon-percentage"><FontAwesomeIcon icon={faArrowUpRightDots} style={{color: "#00573d"}}/></i>
+                <p>
+                  <span className="percentage">78%</span> From April
+                </p>
+              </div>
+          </div>
+          <div className="user-card">
+          <div className="user-header">
+                <i className="icon-users"><FontAwesomeIcon icon={faUserPlus}/></i> {/* Add icon */}
+                <p>New Users</p>
+              </div>
+
+              <div className="stats">
+                <h3>344k</h3>
+                <ResponsiveContainer width="50%" height={50}>
+                  <LineChart data={data}>
+                    <Line type="monotone" dataKey="uv" stroke="#00FF00" strokeWidth={2} dot={false} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="footer">
+                <i className="icon-percentage"><FontAwesomeIcon icon={faArrowUpRightDots} style={{color: "#00573d"}}/></i>
+                <p>
+                  <span className="percentage">78%</span> From April
+                </p>
+              </div>
+          </div>
         </div>
       </div>
     </div>
