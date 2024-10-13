@@ -8,6 +8,7 @@ import Internship from './Internship';
 import Projects from './Project';
 import Sidebar from './component/Sidebar';
 import Help from './Help';
+import Field from './component/Field'
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/courses" element={<Courses />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/internships" element={<Internship />} />
+            <Route path="/internships/field" element={<Field />} />
             <Route path="/help" element={<Help />} />
 
           </Routes>
