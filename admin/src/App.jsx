@@ -9,6 +9,7 @@ import Projects from './Project';
 import Sidebar from './component/Sidebar';
 import Help from './Help';
 import FormBuilder from './component/FormBuilder';
+import Response from './component/response';
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/internships" element={<Internship />} />
             <Route path="/form-builder" element={<FormBuilder />} />
+            <Route path="/response" element={<Response/>} />
             <Route path="/help" element={<Help />} />
 
           </Routes>

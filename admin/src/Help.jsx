@@ -180,6 +180,8 @@ const Help = () => {
         >
           Submit
         </button>
+        </form>
+        </div>
       </form>
     </div>
   );

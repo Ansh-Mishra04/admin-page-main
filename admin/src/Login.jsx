@@ -5,7 +5,7 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-form">
-        <h2>Hello Admin 👋</h2>
+        <h2>Hello Admin👋🏼</h2>
         <form>
           <input
             type="email"
