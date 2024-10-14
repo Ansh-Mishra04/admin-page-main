@@ -1,0 +1,101 @@
+.question-options{
+  margin: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 75%;
+}
+.question-input{
+  width: 75%;
+  border:none;
+  border-bottom: 3px solid #e0e0e0
+}
+.question-input:focus{
+  width: 75%;
+  border:none;
+}
+.question-type{
+  border: 2px solid #e0e0e0;
+  padding : 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.question-input-container{
+  display: flex;
+  justify-content: space-between;
+}
+.question-input-type {
+  margin-top: 10px;
+}
+
+.short-answer-input, .paragraph-input, .date-input, .time-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.options-list {
+  margin-top: 10px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.option-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.delete-option-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c0392b;
+}
+
+.add-option-btn, .add-other-btn {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.question-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.required-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.question-type-dropdown {
+  position: absolute; /* Ensure it is positioned absolutely */
+  background-color: white; /* Background for dropdown */
+  border: 1px solid #e0e0e0; /* Border styling */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.dropdown-item {
+  padding: 10px; /* Add padding for items */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
