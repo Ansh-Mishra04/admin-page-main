@@ -10,6 +10,7 @@ import Sidebar from './component/Sidebar';
 import Help from './Help';
 import Field from './component/Field'
 import Response from './component/response';
+import Tabs from './component/Tabs';
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
             <Route path="/courses" element={<Courses />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/internships" element={<Internship />} />
+            <Route path="/tabs" element={<Tabs />} />
             <Route path="/internships/field" element={<Field />} />
             <Route path="/response" element={<Response/>} />
             <Route path="/help" element={<Help />} />
