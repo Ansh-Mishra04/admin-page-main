@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Field from './Field';
-import Response from './Response';
-import Preview from '../Help';
+import Response from './response';
+import Preview from './Preview';
 import './css/Tabs.css'
 
 const Tabs = () => {
