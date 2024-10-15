@@ -6,6 +6,7 @@
 
   .card {
       width: 100%; /* Make cards full width */
+      z-index: 10;
   }
 }
 .card:hover {

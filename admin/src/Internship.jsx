@@ -5,7 +5,7 @@ const Internships = () => {
   const navigate = useNavigate();
 
   const handleAddFormClick = () => {
-    navigate('/internships/field');
+    navigate('/tabs');
   };
   const recentForms = [
     { id: 1, title: 'Backend Hiring', formImage: '/form-image.jpeg' },

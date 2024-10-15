@@ -1,72 +1,85 @@
-import React from 'react';
-import './css/AddCourse.css'; // Ensure correct path to Modal.css
+import React, { useState } from 'react';
+import './css/AddCourse.css';
 
 const AddCourse = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
-  return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <button className="close-btn" onClick={onClose}>×</button>
+  const handleOverlayClick = (e) => {
+    // Close the modal if the user clicks on the overlay, not the modal content
+    if (e.target.className.includes('modal-overlay')) {
+      onClose();
+    }
+  };
 
-        {/* Header with course image and details */}
+  return (
+    <div className="modal-overlay" onClick={handleOverlayClick}>
+      <div className="modal-container">
+        <button className="close-btn" onClick={onClose}>×</button>
+        
         <div className="modal-header">
-          <img src="/image6.jpeg" alt="Course" />
-          <div className="modal-header-details">
-            <input type="text" placeholder="Title*" />
-            <input type="text" placeholder="Brief Description*" />
-            <input type="text" placeholder="Detailed Description*" />
+          <img 
+            className="course-image" 
+            src="image6.jpeg" 
+            alt="Course" 
+          />
+          <div className="input-fields-container">
+            <input className="input-field" placeholder="Title*" />
+            <input className="input-field" placeholder="Brief Description*" />
+            <input className="input-field" placeholder="Detailed Description*" />
           </div>
         </div>
 
-        {/* Ratings and Testimonials */}
-        <h3>Rating And Testimonials</h3>
-        <div className="ratings">
-          <button>Add New+</button>
-          <button>User Nostiliga</button>
-          <button>User Ankit</button>
-          <button>User Shivam</button>
+
+        <div className="rating-section">
+          <h5>Rating and Testimonials</h5>
+          <div className="ratings">
+          <button className="rating-btn">Add Rating</button>
+          <button className="testimonial-btn">Add Review</button>
+          </div>
         </div>
 
-        {/* Tags */}
-        <h3>Tags</h3>
-        <div className="tags">
-          <button>Beginner</button>
-          <button>Java</button>
-          <button>Tech Skill</button>
-          <button>Add+</button>
+        <div className="tags-section">
+          <span>Tags</span>
+          <div className="tags">
+            <button className="tag-btn">Beginner</button>
+            <button className="tag-btn">Popular</button>
+            <button className="tag-btn">New</button>
+            <button className="tag-btn">Free</button>
+            <button className="tag-btn">Premium</button>
+          </div>
         </div>
 
-        {/* Category */}
-        <h3>Category</h3>
-        <div className="category">
-          <button>Frontend</button>
-          <button>Backend</button>
-          <button>Designing</button>
-          <button>Add+</button>
+        <div className="category-section">
+          <span>Category</span>
+          <div className="categories">
+            <button className="category-btn">Personal</button>
+            <button className="category-btn">Business</button>
+            <button className="category-btn">Cooking</button>
+            <button className="category-btn">Tech</button>
+          </div>
+        </div>
+        <div className="function">
+          <span>Functionalities</span>
+          <div className="function-section">
+            <textarea className="function-input" id='function-name' placeholder="Function Name" />
+            <textarea className="function-input" id='function-description' placeholder="Description" />
+          </div>
+            <button className='add' id='add-function'>Add+</button>
+        </div>
+          
+
+        <div className="sales-section">
+          <span>Sales</span>
+          <div className='sales'>
+          <button className="sales-btn">50% OFF</button>
+          <button className="sales-btn">Limited Offer</button>
+          <button className="sales-btn">New Pricing</button>
+          </div>
         </div>
 
-        {/* Modules */}
-        <h3>Modules</h3>
-        <div className="modules">
-          <input type="text" placeholder="Module Name" />
-          <textarea placeholder="Description"></textarea>
-        </div>
-        <button>Add+</button>
-
-        {/* Sales */}
-        <h3>Sales</h3>
-        <p>10% from June</p>
-        <div className="sales-metrics">
-          <p>7% Total Sold</p>
-          <p>$22,000 Total Revenue</p>
-          <p>20% Commission</p>
-          <p>$4,000 Profit</p>
-        </div>
-
-        {/* Action buttons */}
-        <div className="modal-actions">
+        <div className="modal-footer">
           <button className="delete-btn">Delete</button>
+          <button className="hide-btn">Hide</button>
           <button className="save-btn">Save</button>
           <button className="price-btn">$129</button>
         </div>
