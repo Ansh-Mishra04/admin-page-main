@@ -4,6 +4,15 @@ import './css/response.css';
 const ResponsePage = () => {
   const [acceptingResponses, setAcceptingResponses] = useState(true);
 
+  // Dummy data for 13 rows
+  const rows = Array.from({ length: 13 }, (_, index) => ({
+    timestamp: '',
+    name: '',
+    gamil: '',
+    role: '',
+    college: ''
+  }));
+
   // Toggle the accepting responses
   const handleToggle = () => {
     setAcceptingResponses(!acceptingResponses);
@@ -40,9 +49,15 @@ const ResponsePage = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td colSpan="5" className="waiting">Waiting for responses...</td>
-          </tr>
+          {rows.map((row, index) => (
+            <tr key={index}>
+              <td>{row.timestamp}</td>
+              <td>{row.name}</td>
+              <td>{row.gamil}</td>
+              <td>{row.role}</td>
+              <td>{row.college}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
