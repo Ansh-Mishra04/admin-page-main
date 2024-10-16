@@ -53,6 +53,10 @@ const Question = () => {
     setOptions(newOptions);
   };
 
+  const handleAddOtherOption = () => {
+    setOptions([...options, 'Other']);
+  };
+
   return (
     <div className="question-options">
       <div className="question-input-container">
@@ -61,6 +65,7 @@ const Question = () => {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           className="question-input"
+          placeholder="Enter your question here"
         />
         <div className="question-type" onClick={() => setDropdownOpen(!dropdownOpen)}>
           <div className="selected-type">
@@ -77,7 +82,7 @@ const Question = () => {
                   onClick={() => {
                     setQuestionType(type.value);
                     setDropdownOpen(false);
-                    if (type.value === 'Multiple choice' || type.value === 'Checkboxes' || type.value === 'Drop-down') {
+                    if (['Multiple choice', 'Checkboxes', 'Drop-down'].includes(type.value)) {
                       setOptions(['Option 1']); // Reset options when selecting these types.
                     }
                   }}
@@ -103,13 +108,14 @@ const Question = () => {
             {options.map((option, index) => (
               <div key={index} className="option-item">
                 {questionType === 'Multiple choice' && <input type="radio" disabled />}
-                {questionType === 'Checkboxes' && <input type="checkbox" disabled />}
+                {questionType === 'Checkboxes' && <input type="checkbox"  />}
                 {questionType === 'Drop-down' && <input type="text" disabled placeholder="Dropdown option" />}
                 <input
                   type="text"
                   value={option}
                   onChange={(e) => handleOptionChange(index, e.target.value)}
                   className="option-input"
+                  placeholder="Option text"
                 />
                 <button className="delete-option-btn" onClick={() => handleDeleteOption(index)}>
                   <FontAwesomeIcon icon={faTrashCan} />
@@ -120,7 +126,7 @@ const Question = () => {
               Add option
             </button>
             {questionType === 'Multiple choice' && (
-              <button className="add-other-btn">Add "Other"</button>
+              <button className="add-other-btn" onClick={handleAddOtherOption}>Add "Other"</button>
             )}
           </div>
         )}
@@ -134,10 +140,10 @@ const Question = () => {
 
       <div className="question-footer">
         <div className="actions">
-          <button className="duplicate-btn">
+          <button className="duplicate-btn" aria-label="Duplicate question">
             <FontAwesomeIcon icon={faCopy} />
           </button>
-          <button className="delete-btn">
+          <button className="delete-btn" aria-label="Delete question">
             <FontAwesomeIcon icon={faTrashCan} />
           </button>
         </div>

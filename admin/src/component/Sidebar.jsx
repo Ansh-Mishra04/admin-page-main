@@ -72,13 +72,6 @@ const Sidebar = () => {
                             <span className="nav-arrow">⮞</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link to="/response" className={`nav-link ${selected === 'response' ? 'active' : ''}`} onClick={() => handleSelect('response')}>
-                            <FaQuestionCircle className="me-3" />
-                            Response 
-                            <span className="nav-arrow">⮞</span>
-                        </Link>
-                    </li>
                 </ul>
             </div>
         </div>
