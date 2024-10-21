@@ -11,6 +11,7 @@ function Login() {
             type="email"
             placeholder="Enter your email here"
             required
+            
           />
           <input
             type="password"
