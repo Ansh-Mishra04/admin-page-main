@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './component/css/Internship.css'; // Assuming you'll create a separate CSS file for this component
+import Header from './component/Header'
 const Internships = () => {
   const navigate = useNavigate();
 
@@ -15,9 +16,10 @@ const Internships = () => {
   ];
 
   return (
-
+    <div className='internship-container'>
+    <Header title="Internships"/>
     <div className="internships-page">
-      {/* Add new form section */}
+      
       <div className="add-form-section" onClick={handleAddFormClick}>
         <div className="dotted-box">
           <span>+</span>
@@ -38,6 +40,7 @@ const Internships = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

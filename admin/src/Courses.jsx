@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Cards from './Cards';
 import './component/css/Courses.css';
 import Modal from './component/AddCourse'; // Adjust the import if the path is different
+import Header from './component/Header'
 
 const Courses = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
@@ -49,6 +50,7 @@ const Courses = () => {
 
   return (
     <div className="courses-page">
+      <Header title="Courses"/>
       <div className="section">
         <h2>Add New Course</h2>
         <div className="add-course" onClick={openModal}> {/* Open modal on click */}
