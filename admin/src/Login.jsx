@@ -53,7 +53,7 @@ function Login() {
           <button type="submit" className="login-btn">Log In</button>
         </form>
         <div className="login-divider">
-          <span>or</span>
+          <span></span>
         </div>
         <div className="social-login">
           <button className="google-login">
