@@ -1,6 +1,5 @@
 import React from 'react'
 import './component/css/Dashboard.css';
-// import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import LineCharts from './component/LineChart'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend } from 'chart.js';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend);
@@ -14,6 +13,7 @@ import { faUsers,faUserLock, faUserPlus } from '@fortawesome/free-solid-svg-icon
 import { ResponsiveChoropleth } from '@nivo/geo';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
 import ActiveUserCard from './component/ActiveUserCard';
+import Header from './component/Header'
 
 
 const Dashboard = () => {
@@ -54,6 +54,7 @@ const Dashboard = () => {
   ];
   return (
     <div className="dashboard-container">
+      <Header title="Dashboard"/>
       <div className="overview">
         <div className="cards">
           <div className="card-data">

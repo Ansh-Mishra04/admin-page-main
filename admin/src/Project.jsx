@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Cards from './Cards'; // Assuming Cards.jsx takes a list of courses
 import './component/css/Courses.css';
 import Modal from './component/AddCourse';  // Import the Modal
+import Header from './component/Header'
 
 
 const Project = () => {
@@ -60,6 +61,7 @@ const Project = () => {
   return (
     <div className="courses-page">
       {/* Section for adding a new course */}
+      <Header title="Projects"/>
       <div className="section">
         <h2>Add New Project</h2>
         <div className="add-course">

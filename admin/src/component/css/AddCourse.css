@@ -34,6 +34,17 @@
   cursor: pointer;
   color: black;
 }
+.close-btn:hover {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: black;
+  background-color:none
+}
 
 
 .modal-header {
@@ -112,7 +123,10 @@
   font-size: 12px; /* Smaller font size */
   height: 28px; /* Set a fixed height for consistency */
 }
-
+#Ankit, #Shivam{
+  background-color: blue;
+  color: white;
+}
 .function{
   margin-top: 20px ;
   border-radius: 4px;
@@ -141,8 +155,6 @@
   height: 50px;
 }
 .add{
-  margin-top: 20px;
-  margin-left: 20px;
   border: dashed rgb(198, 198, 198);
   background-color: white;
   color: #505050;
@@ -161,11 +173,31 @@
 
 .modal-footer {
   display: flex;
-  justify-content: space-between; /* Distributes space between buttons evenly */
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  width: 100%; /* Ensures it takes the full width of the modal */
+  width: 100%;
+  padding: 10px;
 }
+
+/* Group the delete, hide, and save buttons */
+.left-buttons {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+}
+
+.right-button {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* Specificity increase to override Bootstrap's default */
+.modal-container .modal-footer {
+  justify-content: space-evenly; /* Ensure it takes priority */
+  gap: 1000px;
+}
+
 
 .delete-btn, .hide-btn, .save-btn, .price-btn {
   padding: 4px 8px; /* Smaller padding for reduced size */
@@ -182,7 +214,6 @@
   background-color: white;
   color: red;
   border: solid 1px red;
-  
 }
 
 .hide-btn {
@@ -202,4 +233,43 @@
   color: #fff;
   border: solid 1px blue;
   font-size: 18px;
+  margin-left: 200px;
+  height: 35px;
 }
+
+.rating-popup {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px; /* Adjust as needed */
+  position: relative;
+  margin: auto; /* Center horizontally */
+  z-index: 10; /* Ensure it's on top of other elements */
+}
+
+.upload-area {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  margin: 10px 0;
+  background-color: #dfdede;
+  border-radius: 4px;
+}
+
+.upload-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.modal-overlay {
+  z-index: 600; /* Ensure the modal overlay is below the rating popup */
+}
+
